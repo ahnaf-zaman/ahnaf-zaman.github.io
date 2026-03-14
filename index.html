@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- fonts from design doc -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Doto:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/data.js" defer></script>
+    <script src="assets/main.js" defer></script>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+        </ul>
+        <div id="contact-links"></div>
+    </nav>
+
+    <section id="hero" class="cover">
+        <div class="cover-inner">
+            <!-- <div class="doc-label">Portfolio</div> -->
+            <img id="about-avatar" src="" alt="Avatar">
+            <h1 id="hero-name"></h1>
+            <div id="hero-tagline"></div>
+            <div class="cover-rule"></div>
+            <p id="hero-bio"></p>
+        </div>
+    </section>
+
+    <section id="about" class="page">
+        <h2>About</h2>
+        <p id="about-bio-long"></p>
+        <div id="about-stats"></div>
+    </section>
+
+    <section id="experience" class="page">
+        <h2>Experience</h2>
+        <div id="experience-timeline" class="timeline"></div>
+    </section>
+
+    <section id="projects" class="page">
+        <h2>Projects</h2>
+        <div id="project-filters"></div>
+        <div id="project-grid" class="card-grid"></div>
+    </section>
+
+    <section id="skills" class="page">
+        <h2>Skills</h2>
+        <div id="skills-container"></div>
+    </section>
+
+    <section id="awards" class="page">
+        <h2>Awards</h2>
+        <div id="awards-grid" class="card-grid"></div>
+    </section>
+
+    <footer>
+        &copy; <span id="footer-year"></span> <span id="footer-name"></span>
+    </footer>
+</body>
+
+</html>
