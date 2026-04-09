@@ -15,25 +15,32 @@
 </head>
 
 <body>
+    <noscript>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+    </noscript>
     <nav id="nav">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#awards">Awards</a></li>
-        </ul>
+        <div class="nav-inline-links">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </div>
         <div id="contact-links"></div>
     </nav>
 
     <section id="hero" class="cover">
         <div class="cover-inner">
             <!-- <div class="doc-label">Portfolio</div> -->
-            <img id="about-avatar" src="" alt="Avatar">
-            <h1 id="hero-name"></h1>
-            <div id="hero-tagline"></div>
-            <div class="cover-rule"></div>
-            <p id="hero-bio"></p>
+            <div class="cover-inner-avatar">
+                <img id="about-avatar" src="" alt="Avatar">
+            </div>
+            <div class="cover-inner-text">
+                <h1 id="hero-name"></h1>
+                <p id="hero-bio"></p>
+            </div>
         </div>
     </section>
 

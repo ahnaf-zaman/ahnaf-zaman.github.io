@@ -1,7 +1,7 @@
 // main.js - render portfolio from PORTFOLIO object
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
+  // initTheme();
   renderHero();
   renderAbout();
   renderProjects();
@@ -11,63 +11,59 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContact();
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   document.getElementById('footer-name').textContent = PORTFOLIO.name;
-
-  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-  document.getElementById('view-projects').addEventListener('click', () => {
-    document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
   });
-  typewriterEffect();
-});
+  // typewriterEffect();
 
-/* theme */
-function setTheme(t) {
-  document.documentElement.setAttribute('data-theme', t);
-  localStorage.setItem('theme', t);
-}
-function toggleTheme() {
-  const current = localStorage.getItem('theme') || 'dark';
-  setTheme(current === 'dark' ? 'light' : 'dark');
-}
-function initTheme() {
-  const saved = localStorage.getItem('theme');
-  if (saved) setTheme(saved);
-}
 
-/* typewriter */
-function typewriterEffect() {
-  const el = document.getElementById('hero-tagline');
-  if (!el || !PORTFOLIO.taglines || !PORTFOLIO.taglines.length) return;
-  let index = 0;
-  let subIndex = 0;
-  let forward = true;
-  const speed = 100;
-  function tick() {
-    const text = PORTFOLIO.taglines[index];
-    if (forward) {
-      el.textContent = text.slice(0, subIndex + 1);
-      subIndex++;
-      if (subIndex === text.length) {
-        forward = false;
-        setTimeout(tick, 1000);
-        return;
-      }
-    } else {
-      el.textContent = text.slice(0, subIndex - 1);
-      subIndex--;
-      if (subIndex === 0) {
-        forward = true;
-        index = (index + 1) % PORTFOLIO.taglines.length;
-      }
-    }
-    setTimeout(tick, speed);
-  }
-  tick();
-}
+// /* theme */
+// function setTheme(t) {
+//   document.documentElement.setAttribute('data-theme', t);
+//   localStorage.setItem('theme', t);
+// }
+// function toggleTheme() {
+//   const current = localStorage.getItem('theme') || 'dark';
+//   setTheme(current === 'dark' ? 'light' : 'dark');
+// }
+// function initTheme() {
+//   const saved = localStorage.getItem('theme');
+//   if (saved) setTheme(saved);
+// }
+
+// /* typewriter */
+// function typewriterEffect() {
+//   const el = document.getElementById('hero-tagline');
+//   if (!el || !PORTFOLIO.taglines || !PORTFOLIO.taglines.length) return;
+//   let index = 0;
+//   let subIndex = 0;
+//   let forward = true;
+//   const speed = 100;
+//   function tick() {
+//     const text = PORTFOLIO.taglines[index];
+//     if (forward) {
+//       el.textContent = text.slice(0, subIndex + 1);
+//       subIndex++;
+//       if (subIndex === text.length) {
+//         forward = false;
+//         setTimeout(tick, 1000);
+//         return;
+//       }
+//     } else {
+//       el.textContent = text.slice(0, subIndex - 1);
+//       subIndex--;
+//       if (subIndex === 0) {
+//         forward = true;
+//         index = (index + 1) % PORTFOLIO.taglines.length;
+//       }
+//     }
+//     setTimeout(tick, speed);
+//   }
+//   tick();
+// }
 
 /* render sections */
 function renderHero() {
   document.getElementById('hero-name').textContent = PORTFOLIO.name;
-  document.getElementById('hero-bio').textContent = PORTFOLIO.bio;
+  document.getElementById('hero-bio').textContent = PORTFOLIO.headline;
   // const cv = document.getElementById('download-cv');
   // cv.href = PORTFOLIO.cv || '';
 }
@@ -77,15 +73,15 @@ function renderAbout() {
     document.getElementById('about-avatar').src = PORTFOLIO.avatar;
   }
   document.getElementById('about-bio-long').textContent = PORTFOLIO.bio || '';
-  const statsContainer = document.getElementById('about-stats');
-  if (PORTFOLIO.stats && PORTFOLIO.stats.length) {
-    PORTFOLIO.stats.forEach(s => {
-      const div = document.createElement('div');
-      div.className = 'stat';
-      div.innerHTML = `<strong>${s.value}</strong> ${s.label}`;
-      statsContainer.appendChild(div);
-    });
-  }
+  // const statsContainer = document.getElementById('about-stats');
+  // if (PORTFOLIO.stats && PORTFOLIO.stats.length) {
+  //   PORTFOLIO.stats.forEach(s => {
+  //     const div = document.createElement('div');
+  //     div.className = 'stat';
+  //     div.innerHTML = `<strong>${s.value}</strong> ${s.label}`;
+  //     statsContainer.appendChild(div);
+  //   });
+  // }
 }
 
 function renderProjects() {
@@ -98,6 +94,7 @@ function renderProjects() {
     card.className = 'card project-card';
     card.setAttribute('data-tags', (p.tags || []).join(','));
     card.innerHTML = `
+      <h3>${p.title}</h3>
       <img src="${p.image || ''}" alt="${p.title}" />
       <p>${p.description}</p>
       <div class="tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
@@ -218,6 +215,7 @@ function renderContact() {
   if (c.github) {
     const a = document.createElement('a');
     a.className = 'btn';
+    a.title = 'GitHub';
     a.href = c.github;
     a.textContent = '[GH]';
     a.target = '_blank';
@@ -226,6 +224,7 @@ function renderContact() {
   if (c.linkedin) {
     const a = document.createElement('a');
     a.className = 'btn';
+    a.title = 'LinkedIn';
     a.href = c.linkedin;
     a.textContent = '[LI]';
     a.target = '_blank';

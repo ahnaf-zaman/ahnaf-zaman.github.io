@@ -5,9 +5,8 @@
 const PORTFOLIO = {
     // IDENTITY
     name: "Ahnaf Zaman",
-    headline: "Aspiring Robotics Engineer",
-    taglines: ["I build things.", "I solve problems."], // typewriter
-    bio: "Short paragraph about yourself.",
+    headline: "Aspiring Electrical Engineer, Edge AI Enthusiast",
+    bio: "I am an aspiring electrical engineer currently studying at the University. I build systems integrating low-cost hardware and cutting-edge software technology to make edge computing more accessible. ",
     avatar: "assets/images/avatar.png",
     cv: "cv.pdf",
 
@@ -19,67 +18,42 @@ const PORTFOLIO = {
         cv: "cv.pdf",
     },
 
-    // STATS (animated hero counters)
-    stats: [
-        { label: "Projects Built", value: 12 },
-        { label: "Years Coding", value: 4 },
-        { label: "Certifications", value: 3 },
-    ],
-
     // PROJECTS
     projects: [
         {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["Python", "Machine Learning"],
+            title: "Home Monitor",
+            description: "ESP32-based local environment monitoring system, integrating Flask server for storing and visualizing historical sensor data",
+            tags: ["ESP32", "Sensors", "Flask", "SQLite"],
             image: "assets/images/project-1.png",
             github: "https://github.com/you/project",
             demo: "https://project-demo.vercel.app",
             featured: true,
         },
         {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["Python", "Machine Learning", "API"],
+            title: "PyLLM",
+            description: "Terminal-native LLM chatting environment with support for local and cloud models, long-term memory, and more.",
+            tags: ["Python", "Ollama", "ChromaDB", "SQLite"],
             image: "assets/images/project-1.png",
             github: "https://github.com/you/project",
             demo: "https://project-demo.vercel.app",
             featured: true,
         },
         {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["ESP32", "Servos", "Robotics"],
+            title: "Shobdle",
+            description: "Bangla variant of Wordle shipped and approved for Summer of Making 2025.",
+            tags: ["HTML", "JavaScript", "Regex"],
             image: "assets/images/project-1.png",
             github: "https://github.com/you/project",
             demo: "https://project-demo.vercel.app",
             featured: true,
         },
-                {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["ESP32", "Servos", "Robotics"],
-            image: "assets/images/project-1.png",
-            github: "https://github.com/you/project",
-            demo: "https://project-demo.vercel.app",
-            featured: true,
-        },
-                {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["ESP32", "Servos", "Robotics"],
-            image: "assets/images/project-1.png",
-            github: "https://github.com/you/project",
-            demo: "https://project-demo.vercel.app",
-            featured: true,
-        },
-                {
-            title: "Project Name",
-            description: "What it does and why it matters.",
-            tags: ["ESP32", "Servos", "Robotics"],
-            image: "assets/images/project-1.png",
-            github: "https://github.com/you/project",
-            demo: "https://project-demo.vercel.app",
+        {
+            title: "This Website!",
+            description: "A portfolio website designed to showcase my projects and skills.",
+            tags: ["HTML", "CSS", "JavaScript"],
+            image: "assets/images/projects/portfolio.png",
+            github: "https://github.com/ahnaf-zaman/ahnaf-zaman.github.io",
+            demo: "https://ahnaf-zaman.github.io",
             featured: true,
         },
     ],
@@ -106,12 +80,12 @@ const PORTFOLIO = {
     // EXPERIENCE
     experience: [
         {
-            role: "Software Engineer Intern",
-            company: "Company Name",
-            dates: "Jun 2024 – Aug 2024",
-            location: "Remote",
+            role: "Private Tutor",
+            company: "Self-Employed",
+            dates: "Aug 2024 - Present",
+            location: "Dhaka, BD",
             bullets: [
-                "Built X that improved Y by Z%",
+                "Built custom teaching materials",
                 "Led development of feature W",
             ],
         },
@@ -132,7 +106,7 @@ const PORTFOLIO = {
         {
             degree: "B.Sc. Computer Science",
             institution: "University Name",
-            dates: "2021 – 2025",
+            dates: "2021 - 2025",
             gpa: "3.8/4.0", // optional
         },
     ],
